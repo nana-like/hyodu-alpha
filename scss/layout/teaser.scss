@@ -13,6 +13,11 @@
     text-transform: uppercase;
     letter-spacing: -0.4px;
     font-weight: $fw-bl;
+
+    @include res--laptop {
+      font-size: 15px;
+    }
+
   }
 
   &__lg {
@@ -20,6 +25,10 @@
     line-height: 1.58;
     font-weight: $fw-b;
     letter-spacing: -0.48px;
+
+    @include res--laptop {
+      font-size: 32px;
+    }
   }
 }
 
@@ -32,10 +41,19 @@
   height: 640px;
   background-color: #ED6B67;
 
+  @include res--laptop {
+    height: 800px;
+  }
+
   .illust--hero {
     width: 229px;
     height: 423px;
     background: gold;
+
+    @include res--laptop {
+      width: 312px;
+      height: 576px;
+    }
   }
 }
 
@@ -47,6 +65,11 @@
   max-width: $max-width-m;
   margin: 0 auto;
 
+  @include res--laptop {
+    padding: 130px 0px 0;
+    max-width: $max-width;
+  }
+
   .illust--research {
     position: absolute;
     top: 394px;
@@ -54,18 +77,39 @@
     width: 145px;
     height: 109px;
     background: #000;
+
+    @include res--laptop {
+      width: 238px;
+      height: 178px;
+      top: 284px;
+      right: 0;
+      left: 20px;
+    }
   }
+
 }
 
 .research {
   margin-top: 40px;
 
+
+  @include res--laptop {
+    @include flexbox();
+    width: 100%;
+    padding-left: 310px;
+  }
+
   &__item {
     &:first-child {
       margin-bottom: 135px;
 
+      @include res--laptop {
+        margin-right: 50px;
+        margin-bottom: 0;
+      }
+
       .research__list:first-child {
-        width: 284px;
+        width: 278px;
       }
     }
   }
@@ -75,7 +119,13 @@
     font-size: 24px;
     font-weight: $fw-m;
     line-height: 1.46;
-    letter-spacing: -0.48;
+    letter-spacing: -0.5px;
+
+    @include res--laptop {
+      font-size: 24px;
+      font-weight: $fw-t;
+      letter-spacing: -1.2px;
+    }
   }
 
   &__result {
@@ -117,7 +167,11 @@
     padding-left: 30px;
     font-size: 14px;
     font-weight: $fw-b;
-    letter-spacing: -0.42px;
+    letter-spacing: -0.6px;
+
+    @include res--laptop {
+      font-size: 13px;
+    }
   }
 
   &__list-number {
@@ -130,6 +184,11 @@
     text-align: right;
     letter-spacing: -0.3px;
 
+    @include res--laptop {
+      height: 11px;
+      margin-top: 2px;
+    }
+
     &:before {
       display: block;
       width: 100%;
@@ -139,14 +198,31 @@
     }
 
   }
+}
 
-  &__info {
-    margin-top: 80px;
-    font-size: 14px;
-    font-weight: $fw-m;
-    line-height: 1.43;
-    letter-spacing: -0.28px;
-    color: #8d8d8d;
+.info {
+  margin-top: 80px;
+  font-size: 14px;
+  font-weight: $fw-m;
+  line-height: 1.43;
+  letter-spacing: -0.28px;
+  color: #8d8d8d;
+
+  @include res--laptop {
+    // text-align: right;
+    // padding-right: 100px;
+    margin-top: 34px;
+    padding-left: 636px;
+  }
+
+
+  .spacer {
+    margin-left: 10px;
+  }
+
+  &__text {
+    display: inline-block;
+    text-align: left;
   }
 }
 
@@ -160,6 +236,13 @@
   max-width: $max-width-m;
   margin: 80px auto 0;
 
+  @include res--laptop {
+    padding: 0px 0;
+    max-width: $max-width;
+    margin-top: 114px;
+  }
+
+
   .illust--about {
     position: absolute;
     top: 204px;
@@ -167,6 +250,16 @@
     width: 145px;
     height: 109px;
     background: #000;
+
+    @include res--laptop {
+      width: 300px;
+      height: 238px;
+      top: 20px;
+      right: 0;
+      background: orange;
+
+    }
+
   }
 
   .title__lg {
@@ -181,29 +274,75 @@
 
   .contents {
     margin-top: 168px;
+
+    @include res--laptop {
+      margin-top: 80px;
+    }
+
   }
 
 }
 
 .about {
 
-  &__text {
-    font-size: 20px;
-    font-weight: $fw-m;
-    line-height: 1.5;
-    letter-spacing: -0.62px;
-    color: #656565;
-    margin-bottom: 30px;
-    word-break: keep-all;
+  &__inner {
+
+    @include res--laptop {
+      @include flexbox();
+      @include justify-content(space-between);
+    }
   }
 
   &__inner-top {
     margin-bottom: 30px;
-  }
-}
 
-.accent {
-  color: #f35a54;
+    @include res--laptop {
+      max-width: 280px;
+      margin-right: 78px;
+      margin-bottom: 0;
+      @include flex-shrink(0);
+
+      .about__text:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+
+  &__inner-bottom {
+
+
+    .about__text {
+      line-height: 1.5;
+      letter-spacing: -0.85px;
+      color: #1a1311;
+
+      @include res--laptop {
+        font-size: 19px;
+        letter-spacing: -1px;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: $fw-m;
+    line-height: 1.5;
+    letter-spacing: -0.72px;
+    color: #656565;
+    margin-bottom: 30px;
+    word-break: keep-all;
+
+    @include res--laptop {
+      font-size: 19px;
+      letter-spacing: -0.7px;
+    }
+  }
+
+  .accent {
+    color: #f35a54;
+    font-weight: $fw-b;
+  }
+
 }
 
 
@@ -217,12 +356,22 @@
   text-align: center;
   color: #fff;
 
+  @include res--laptop {
+    margin-top: 150px;
+    padding: 78px 0;
+  }
+
   &__text {
     display: block;
     margin-bottom: 2px;
     font-size: 20px;
     font-weight: $fw-bl;
     letter-spacing: -0.4px;
+
+    @include res--laptop {
+      font-size: 31px;
+      margin-bottom: 6px;
+    }
   }
 
   &__small {
@@ -231,6 +380,12 @@
     font-size: 13px;
     font-weight: $fw-b;
     letter-spacing: -0.28px;
+
+    @include res--laptop {
+      font-size: 17px;
+      margin-top: 14px;
+      letter-spacing: -0.36px;
+    }
   }
 }
 
@@ -245,17 +400,37 @@
   padding: 0 20px;
   @include flexbox();
   @include justify-content(space-between);
+
+
+  @include res--laptop {
+    // @include justify-content(center);
+    max-width: 1080px;
+    padding: 0;
+  }
 }
 
 .char {
-  background-size: cover;
+  background-size: 100%;
   position: relative;
+  @include flex-shrink(0);
+
+  @include res--laptop {
+
+    background-size: 95%;
+  }
 
   &--dad {
     top: 82px;
     width: 61px;
     height: 191px;
     @include bgi("char-dad");
+
+    @include res--laptop {
+      top: 62px;
+      width: 102px;
+      height: 323px;
+      margin-right: 30px;
+    }
   }
 
   &--boy {
@@ -263,6 +438,13 @@
     width: 68px;
     height: 188px;
     @include bgi("char-boy");
+
+    @include res--laptop {
+      top: 58px;
+      width: 117px;
+      height: 318px;
+      margin-right: 440px;
+    }
   }
 
   &--mom {
@@ -270,6 +452,12 @@
     width: 64px;
     height: 201px;
     @include bgi("char-mom");
+
+    @include res--laptop {
+      top: 54px;
+      width: 107px;
+      height: 340px;
+    }
   }
 
   &--girl {
@@ -277,6 +465,12 @@
     width: 90px;
     height: 206px;
     @include bgi("char-girl");
+
+    @include res--laptop {
+      top: 56px;
+      width: 137px;
+      height: 350px;
+    }
   }
 }
 
@@ -289,4 +483,20 @@
   width: 1px;
   height: 1px;
   margin: -1px;
+}
+
+.br-pc {
+  display: none;
+
+  @include res--laptop {
+    display: block;
+  }
+}
+
+.br-mo {
+  display: block;
+
+  @include res--laptop {
+    display: none;
+  }
 }

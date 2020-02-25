@@ -3,7 +3,7 @@
 /*! style.css */
 
 //Font
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,500,700,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,500,700,900&display=swap');
 @import "helpers/variables";
 
 @import "helpers/mixins";
@@ -12,8 +12,7 @@
 @import "base/reset";
 @import "base/animation";
 
-@import "layout/hero";
-@import "layout/section-research";
+@import "layout/teaser";
 
 
 /*! 
