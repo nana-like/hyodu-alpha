@@ -1,0 +1,292 @@
+// ---
+// layout
+// ---
+
+
+// 🤘공통요소
+.title {
+  &__sm {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: $c-orange;
+    text-transform: uppercase;
+    letter-spacing: -0.4px;
+    font-weight: $fw-bl;
+  }
+
+  &__lg {
+    font-size: 24px;
+    line-height: 1.58;
+    font-weight: $fw-b;
+    letter-spacing: -0.48px;
+  }
+}
+
+// ✊히어로 섹션
+.hero {
+  @include flexbox();
+  @include justify-content(center);
+  @include align-items(center);
+  width: 100%;
+  height: 640px;
+  background-color: #ED6B67;
+
+  .illust--hero {
+    width: 229px;
+    height: 423px;
+    background: gold;
+  }
+}
+
+// ✊리서치 섹션
+.section--research {
+  position: relative;
+  padding: 40px 30px 0;
+  width: 100%;
+  max-width: $max-width-m;
+  margin: 0 auto;
+
+  .illust--research {
+    position: absolute;
+    top: 394px;
+    right: 28px;
+    width: 145px;
+    height: 109px;
+    background: #000;
+  }
+}
+
+.research {
+  margin-top: 40px;
+
+  &__item {
+    &:first-child {
+      margin-bottom: 135px;
+
+      .research__list:first-child {
+        width: 284px;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    font-size: 24px;
+    font-weight: $fw-m;
+    line-height: 1.46;
+    letter-spacing: -0.48;
+  }
+
+  &__result {
+    margin-top: 40px;
+    counter-reset: resultNumber;
+  }
+
+  &__list {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      position: absolute;
+      top: -9px;
+      left: 0;
+      display: block;
+      color: #bfbfbf;
+      font-weight: $fw-t;
+      font-size: 22px;
+      counter-increment: resultNumber;
+      content: counter(resultNumber);
+    }
+
+    &:first-child {
+      width: 294px;
+    }
+
+    &:nth-child(2) {
+      width: 220px;
+    }
+
+    &:nth-child(3) {
+      width: 164px;
+    }
+  }
+
+
+  &__list-text {
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: $fw-b;
+    letter-spacing: -0.42px;
+  }
+
+  &__list-number {
+    display: block;
+    font-size: 10px;
+    margin-top: 1px;
+    height: 10px;
+    font-weight: $fw-b;
+    color: $c-orange;
+    text-align: right;
+    letter-spacing: -0.3px;
+
+    &:before {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: #FFACA8;
+      content: '';
+    }
+
+  }
+
+  &__info {
+    margin-top: 80px;
+    font-size: 14px;
+    font-weight: $fw-m;
+    line-height: 1.43;
+    letter-spacing: -0.28px;
+    color: #8d8d8d;
+  }
+}
+
+
+// ✊리서치 섹션
+.section--about {
+  position: relative;
+  padding: 0 30px 0;
+  margin-bottom: 95px;
+  width: 100%;
+  max-width: $max-width-m;
+  margin: 80px auto 0;
+
+  .illust--about {
+    position: absolute;
+    top: 204px;
+    right: 28px;
+    width: 145px;
+    height: 109px;
+    background: #000;
+  }
+
+  .title__lg {
+    // @include inline-flex();
+    // @include flex-direction(column);
+
+    span {
+      display: inline;
+      border-bottom: 1px solid #FFACA8;
+    }
+  }
+
+  .contents {
+    margin-top: 168px;
+  }
+
+}
+
+.about {
+
+  &__text {
+    font-size: 20px;
+    font-weight: $fw-m;
+    line-height: 1.5;
+    letter-spacing: -0.62px;
+    color: #656565;
+    margin-bottom: 30px;
+    word-break: keep-all;
+  }
+
+  &__inner-top {
+    margin-bottom: 30px;
+  }
+}
+
+.accent {
+  color: #f35a54;
+}
+
+
+
+.slogan {
+  overflow: hidden;
+  position: relative;
+  margin-top: 95px;
+  padding: 60px 0;
+  background-color: rgba(237, 107, 103, 0.94);
+  text-align: center;
+  color: #fff;
+
+  &__text {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: $fw-bl;
+    letter-spacing: -0.4px;
+  }
+
+  &__small {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: $fw-b;
+    letter-spacing: -0.28px;
+  }
+}
+
+.char-container {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 520px;
+  padding: 0 20px;
+  @include flexbox();
+  @include justify-content(space-between);
+}
+
+.char {
+  background-size: cover;
+  position: relative;
+
+  &--dad {
+    top: 82px;
+    width: 61px;
+    height: 191px;
+    @include bgi("char-dad");
+  }
+
+  &--boy {
+    top: 76px;
+    width: 68px;
+    height: 188px;
+    @include bgi("char-boy");
+  }
+
+  &--mom {
+    top: 76px;
+    width: 64px;
+    height: 201px;
+    @include bgi("char-mom");
+  }
+
+  &--girl {
+    top: 64px;
+    width: 90px;
+    height: 206px;
+    @include bgi("char-girl");
+  }
+}
+
+
+.blind {
+  // 👆 SEO용 텍스트 숨기기
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}

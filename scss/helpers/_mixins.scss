@@ -4,44 +4,6 @@
 // **** Last Modified : 2018-09-05
 
 
-// 효두 전용 믹스인
-@mixin checkIcon($iconColor:"101010", $borderColor: #101010) {
-  background-image: icon(check, $iconColor);
-  width: 17px;
-  height: 17px;
-  background-size: 9px;
-  background-position: 49.5% 50%;
-  background-repeat: no-repeat;
-  border: 1px solid $borderColor;
-  border-radius: 50%;
-
-  //laptop
-  @include res--laptop {
-    width: 18px;
-    height: 18px;
-    background-size: 10px;
-  }
-}
-
-@mixin listBullet($color: #4b4b4b) {
-  position: absolute;
-  display: block;
-  top: 10px;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  margin-right: 6px;
-  transform: translateY(-50%);
-  background-color: $color;
-  content: '';
-
-  //laptop
-  @include res--laptop {
-    top: 11px;
-  }
-}
-
 // 폰트
 @mixin font-main {
   font-family: "Noto Sans KR", AppleGothic, sans-serif, Helvetica;
@@ -156,6 +118,15 @@
   display: -webkit-flex;
   display: flex;
 }
+
+@mixin inline-flex() {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 
 // The 'flex' shorthand
 // - applies to: flex items
