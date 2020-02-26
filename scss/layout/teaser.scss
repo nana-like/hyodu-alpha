@@ -48,7 +48,8 @@
   .illust--hero {
     width: 229px;
     height: 423px;
-    background: gold;
+    @include bgi("pic-hero");
+    background-size: 100%;
 
     @include res--laptop {
       width: 312px;
@@ -76,7 +77,8 @@
     right: 28px;
     width: 145px;
     height: 109px;
-    background: #000;
+    @include bgi("pic-research");
+    background-size: 100%;
 
     @include res--laptop {
       width: 238px;
@@ -169,9 +171,7 @@
     font-weight: $fw-b;
     letter-spacing: -0.6px;
 
-    @include res--laptop {
-      font-size: 13px;
-    }
+    @include res--laptop {}
   }
 
   &__list-number {
@@ -244,27 +244,27 @@
 
 
   .illust--about {
+    z-index: -1;
     position: absolute;
-    top: 204px;
+    top: 190px;
     right: 28px;
-    width: 145px;
-    height: 109px;
-    background: #000;
+    width: 171px;
+    height: 205.3px;
+    @include bgi("pic-about-mo");
+    background-size: 100%;
 
     @include res--laptop {
-      width: 300px;
-      height: 238px;
-      top: 20px;
-      right: 0;
-      background: orange;
+      width: 320px;
+      height: 714px;
+      top: -5px;
+      right: 30px;
+      @include bgi("pic-about");
 
     }
 
   }
 
   .title__lg {
-    // @include inline-flex();
-    // @include flex-direction(column);
 
     span {
       display: inline;
@@ -403,7 +403,6 @@
 
 
   @include res--laptop {
-    // @include justify-content(center);
     max-width: 1080px;
     padding: 0;
   }

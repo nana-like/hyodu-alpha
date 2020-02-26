@@ -376,7 +376,9 @@ body {
   .hero .illust--hero {
     width: 229px;
     height: 423px;
-    background: gold; }
+    background-image: url(../images/pic-hero.png);
+    background-repeat: no-repeat;
+    background-size: 100%; }
     @media screen and (min-width: 1060px) {
       .hero .illust--hero {
         width: 312px;
@@ -398,7 +400,9 @@ body {
     right: 28px;
     width: 145px;
     height: 109px;
-    background: #000; }
+    background-image: url(../images/pic-research.png);
+    background-repeat: no-repeat;
+    background-size: 100%; }
     @media screen and (min-width: 1060px) {
       .section--research .illust--research {
         width: 238px;
@@ -464,9 +468,6 @@ body {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: -0.6px; }
-    @media screen and (min-width: 1060px) {
-      .research__list-text {
-        font-size: 13px; } }
   .research__list-number {
     display: block;
     font-size: 10px;
@@ -517,19 +518,23 @@ body {
       max-width: 920px;
       margin-top: 114px; } }
   .section--about .illust--about {
+    z-index: -1;
     position: absolute;
-    top: 204px;
+    top: 190px;
     right: 28px;
-    width: 145px;
-    height: 109px;
-    background: #000; }
+    width: 171px;
+    height: 205.3px;
+    background-image: url(../images/pic-about-mo.png);
+    background-repeat: no-repeat;
+    background-size: 100%; }
     @media screen and (min-width: 1060px) {
       .section--about .illust--about {
-        width: 300px;
-        height: 238px;
-        top: 20px;
-        right: 0;
-        background: orange; } }
+        width: 320px;
+        height: 714px;
+        top: -5px;
+        right: 30px;
+        background-image: url(../images/pic-about.png);
+        background-repeat: no-repeat; } }
   .section--about .title__lg span {
     display: inline;
     border-bottom: 1px solid #FFACA8; }
