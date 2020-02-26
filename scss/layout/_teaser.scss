@@ -48,14 +48,14 @@
   .illust--hero {
     width: 229px;
     height: 423px;
-    @include bgi("pic-hero");
-    background-size: 100%;
+    display: block;
 
     @include res--laptop {
       width: 312px;
       height: 576px;
     }
   }
+
 }
 
 // ✊리서치 섹션
@@ -267,8 +267,19 @@
   .title__lg {
 
     span {
+      position: relative;
       display: inline;
-      border-bottom: 1px solid #FFACA8;
+
+      &:after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        max-width: 0%;
+        transition: max-width 1s;
+        height: 1px;
+        background-color: #FFACA8;
+      }
     }
   }
 
@@ -314,11 +325,11 @@
     .about__text {
       line-height: 1.5;
       letter-spacing: -0.85px;
-      color: #1a1311;
 
       @include res--laptop {
         font-size: 19px;
         letter-spacing: -1px;
+        color: #1a1311;
       }
     }
   }
@@ -497,5 +508,193 @@
 
   @include res--laptop {
     display: none;
+  }
+}
+
+
+
+// // 페이드인 아이템 관리
+// .fadeIn {
+//   opacity: 0;
+//   transition: transform 0.5s, opacity 0.8s;
+//   // animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
+//   transform: translateY(30px);
+//   animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+//   &.-ani-up {}
+
+//   &.active {
+//     transform: translateY(0px);
+//     opacity: 1;
+//   }
+// }
+
+// .section--research {
+
+//   .research__item {
+//     transition-delay: 0s;
+//   }
+
+//   .info {
+//     transition-delay: 0s;
+//   }
+// }
+
+// @include res--laptop {
+
+//   .section--research .research__item {
+
+//     //부모세대가 자녀에게~
+//     &:first-child {
+//       transition-delay: 0.2s;
+//     }
+
+//     //밀레니얼 세대가~
+//     &:nth-child(2) {
+//       transition-delay: 0.45s;
+//     }
+//   }
+
+//   .info {
+//     transition-delay: 0.8s;
+//   }
+// }
+
+// .section--about {
+
+//   .research__item {
+
+//     //부모세대가 자녀에게~
+//     &:first-child {
+//       transition-delay: 0.2s;
+//     }
+
+//     //밀레니얼 세대가~
+//     &:nth-child(2) {
+//       transition-delay: 0.45s;
+//     }
+//   }
+
+//   .info {
+//     transition-delay: 0.8s;
+//   }
+
+//   @include res--laptop {}
+// }
+
+.ani {
+  opacity: 0;
+}
+
+.fadeIn {
+  opacity: 0;
+  transition: 0s;
+  transform: translateY(30px);
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+
+  &.active {
+    transition: transform 0.5s, opacity 0.8s;
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+
+.section--about .active .title__lg {
+
+  span:after {
+    max-width: 100%;
+  }
+
+  span {
+    &:first-child:after {
+      transition-delay: 0.3s;
+    }
+
+    &:nth-child(3):after {
+      transition-delay: 0.55s;
+    }
+
+    &:nth-child(5):after {
+      transition-delay: 0.75s;
+    }
+
+    &:nth-child(7):after {
+      transition-delay: 0.95s;
+    }
+
+  }
+}
+
+.illust--research {
+  animation: ani 3s infinite;
+}
+
+
+@keyframes ani {
+  0% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(3deg);
+  }
+
+}
+
+.illust--about {
+  transform-origin: bottom;
+  animation: ani2 8s infinite;
+}
+
+
+@keyframes ani2 {
+  0% {
+    transform: rotate(2deg) scale(1);
+  }
+
+  30% {
+    transform: rotate(-2deg) scale(1.03);
+  }
+
+  90% {
+    transform: rotate(2deg) scale(1);
+  }
+
+  100% {
+    transform: rotate(2deg) scale(1);
+  }
+
+}
+
+
+.char {
+  animation: ani3 2s infinite;
+}
+
+.char--boy {
+  animation-delay: 0.3s;
+}
+
+.char--mom {
+  animation-delay: 0.5s;
+}
+
+.char--girl {
+  animation-delay: 0.7s;
+}
+
+@keyframes ani3 {
+  10% {
+    transform: translateY(-15px);
+  }
+
+  40% {
+    transform: translateY(0px);
   }
 }

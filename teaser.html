@@ -48,18 +48,19 @@
 
     <div class="hero">
       <h1 class="title blind">hyodu - 효두</h1>
-      <div class="illust illust--hero"></div>
+      <img class="illust--hero" src="images/pic-hero.png" alt="hyodu illustration">
+      <!-- <div class="illust illust--hero"></div> -->
     </div>
 
     <section class="section section--research">
-      <h2 class="title">
+      <h2 class="title ani ani-research-1 fadeIn">
         <small class="title__sm">hyodu research</small>
         <p class="title__lg">효두는 궁금했습니다.</p>
       </h2>
       <div class="contents">
         <div class="illust illust--research"></div>
         <div class="research">
-          <div class="research__item">
+          <div class="research__item ani  ani-research-2 fadeIn">
             <strong class="research__title">부모세대가<br /> 자녀에게 가장 원하는 것은<br />무엇인가요?</strong>
             <ol class="research__result">
               <li class="research__list">
@@ -76,7 +77,7 @@
               </li>
             </ol>
           </div>
-          <div class="research__item">
+          <div class="research__item ani  ani-research-3 fadeIn">
             <strong class="research__title">밀레니얼 세대가<br /> 효도를 할 때 불편한 점은<br /> 무엇인가요?</strong>
             <ol class="research__result">
               <li class="research__list">
@@ -94,7 +95,7 @@
             </ol>
           </div>
         </div>
-        <div class="info">
+        <div class="info ani-research-4 fadeIn">
           <p class="info__text">* 본 리서치는 2019년 10월부터 11월까지<br /> <em class="spacer"></em>웹 설문폼을 통해 진행되었습니다.</p>
         </div>
       </div>
@@ -102,7 +103,7 @@
 
 
     <section class="section section--about">
-      <h2 class="title">
+      <h2 class="title fadeIn">
         <small class="title__sm">about hyodu</small>
         <p class="title__lg">
           <span>밀레니얼 세대는</span><br />
@@ -114,7 +115,7 @@
         <div class="illust illust--about"></div>
         <div class="about">
           <div class="about__inner">
-            <div class="about__inner-top">
+            <div class="about__inner-top fadeIn">
               <p class="about__text">세상의 모든 딸과 아들이 입버릇처럼
                 하는 말, ‘엄마 아빠한테 효도할 거야.’
                 그런데 막상 하려고 하니 막막합니다.
@@ -123,9 +124,9 @@
                 해주는 건데, 왜 그 과정이 힘들고
                 막막할까요?</p>
             </div>
-            <div class="about__inner-bottom">
+            <div class="about__inner-bottom fadeIn">
               <p class="about__text">효도 관련 액티비티와 상품을 한곳에서
-                볼 수 있는 플랫폼이 있다면<br class="br-pc" />효도를
+                볼 수 있는 플랫폼이 있다면 <br class="br-pc" />효도를
                 더 이상 내일로 미루지 않고, 오늘 당장
                 실천에 옮길 수 있지 않을까요? </p>
               <p class="about__text">어떤 게 좋은 효도일지 고민하지 마세요.<br class="br-pc" />
@@ -141,9 +142,11 @@
     </section>
 
     <div class="slogan">
-      <strong class="slogan__text"># 효도를 두잇하다</strong>
-      <strong class="slogan__text"># 국내 최초 밀레니얼 효도 플랫폼</strong>
-      <p class="slogan__small">2020년 상반기를 목표로 뚝딱뚝딱 효두 만드는 중!</p>
+      <div class="slogan-container fadeIn">
+        <strong class="slogan__text"># 효도를 두잇하다</strong>
+        <strong class="slogan__text"># 국내 최초 밀레니얼 효도 플랫폼</strong>
+        <p class="slogan__small">2020년 상반기를 목표로 뚝딱뚝딱 효두 만드는 중!</p>
+      </div>
       <div class="char-container">
         <div class="char char--dad"></div>
         <div class="char char--boy"></div>
@@ -156,8 +159,14 @@
 
   <!--TODO: 체크체크-->
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/vivus/0.1.2/vivus.min.js"></script>
-  <script src="js/ui.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/vivus/0.1.2/vivus.min.js"></script>-->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+  <script src="./scrollreveal.min.js"></script>
+  <script src="./ui.js"></script>
 
 
 </body>
