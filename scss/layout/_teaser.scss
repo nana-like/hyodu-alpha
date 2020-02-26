@@ -45,6 +45,11 @@
     height: 800px;
   }
 
+  .pic {
+    position: relative;
+    @include select-none;
+  }
+
   .illust--hero {
     width: 229px;
     height: 423px;
@@ -53,6 +58,40 @@
     @include res--laptop {
       width: 312px;
       height: 576px;
+    }
+  }
+
+  .deco-mom-eyes {
+    position: absolute;
+    top: 81px;
+    left: 48px;
+    width: 19px;
+    height: 11px;
+    @include bgi("deco-mom-eyes");
+    background-size: 100%;
+
+    @include res--laptop {
+      top: 110px;
+      left: 65px;
+      width: 25px;
+      height: 20px;
+    }
+  }
+
+  .deco-girl-eyes {
+    position: absolute;
+    top: 51px;
+    left: 142px;
+    width: 14px;
+    height: 11px;
+    @include bgi("deco-girl-eyes");
+    background-size: 100%;
+
+    @include res--laptop {
+      top: 69px;
+      left: 194px;
+      width: 18.5px;
+      height: 15px;
     }
   }
 
@@ -696,5 +735,47 @@
 
   40% {
     transform: translateY(0px);
+  }
+}
+
+.deco-mom-eyes {
+  animation: eyeBlink 4s infinite;
+}
+
+.deco-girl-eyes {
+
+  animation: eyeBlink 5s infinite;
+  animation-delay: 1s
+}
+
+@keyframes eyeBlink {
+  4% {
+    transform: scaleY(0.1)
+  }
+
+  6% {
+    transform: scaleY(1)
+  }
+
+  8% {
+    transform: scaleY(0.1)
+  }
+
+  10% {
+    transform: scaleY(1)
+  }
+
+  98% {
+    transform: scaleY(1)
+  }
+
+  100% {
+    transform: scaleY(0.1)
+  }
+}
+
+@keyframes eyeWink {
+  4% {
+    transform: translate(0px, 19px) scaleY(0.1)
   }
 }
