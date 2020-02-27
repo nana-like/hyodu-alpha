@@ -2,7 +2,6 @@
 // layout
 // ---
 
-
 // 🤘공통요소
 .title {
   &__sm {
@@ -17,7 +16,6 @@
     @include res--laptop {
       font-size: 15px;
     }
-
   }
 
   &__lg {
@@ -39,7 +37,7 @@
   @include align-items(center);
   width: 100%;
   height: 640px;
-  background-color: #ED6B67;
+  background-color: #ed6b67;
 
   @include res--laptop {
     height: 800px;
@@ -48,12 +46,15 @@
   .pic {
     position: relative;
     @include select-none;
+    @include pointer-none;
   }
 
   .illust--hero {
     width: 229px;
     height: 423px;
     display: block;
+    @include select-none;
+    @include pointer-none;
 
     @include res--laptop {
       width: 312px;
@@ -71,9 +72,7 @@
       width: 313px;
       height: 251px;
     }
-
   }
-
 
   .deco-mom-eyes-container {
     position: absolute;
@@ -85,7 +84,6 @@
       left: 65px;
     }
   }
-
 
   .deco-mom-eyes {
     width: 19px;
@@ -101,7 +99,7 @@
 
   .deco-girl-eyes-container {
     position: absolute;
-    top: 51px;
+    top: 50px;
     left: 142px;
 
     @include res--laptop {
@@ -123,7 +121,6 @@
       height: 15px;
     }
   }
-
 }
 
 // ✊리서치 섹션
@@ -156,12 +153,10 @@
       left: 20px;
     }
   }
-
 }
 
 .research {
   margin-top: 40px;
-
 
   @include res--laptop {
     @include flexbox();
@@ -232,14 +227,14 @@
     }
   }
 
-
   &__list-text {
     padding-left: 30px;
     font-size: 14px;
     font-weight: $fw-b;
     letter-spacing: -0.6px;
 
-    @include res--laptop {}
+    @include res--laptop {
+    }
   }
 
   &__list-number {
@@ -261,10 +256,9 @@
       display: block;
       width: 100%;
       height: 1px;
-      background-color: #FFACA8;
-      content: '';
+      background-color: #ffaca8;
+      content: "";
     }
-
   }
 }
 
@@ -283,7 +277,6 @@
     padding-left: 636px;
   }
 
-
   .spacer {
     margin-left: 10px;
   }
@@ -293,7 +286,6 @@
     text-align: left;
   }
 }
-
 
 // ✊리서치 섹션
 .section--about {
@@ -309,7 +301,6 @@
     max-width: $max-width;
     margin-top: 114px;
   }
-
 
   .illust--about {
     z-index: -1;
@@ -327,26 +318,23 @@
       top: -5px;
       right: 30px;
       @include bgi("pic-about");
-
     }
-
   }
 
   .title__lg {
-
     span {
       position: relative;
       display: inline;
 
       &:after {
         position: absolute;
-        content: '';
+        content: "";
         display: block;
         width: 100%;
         max-width: 0%;
         transition: max-width 1s;
         height: 1px;
-        background-color: #FFACA8;
+        background-color: #ffaca8;
       }
     }
   }
@@ -357,15 +345,11 @@
     @include res--laptop {
       margin-top: 80px;
     }
-
   }
-
 }
 
 .about {
-
   &__inner {
-
     @include res--laptop {
       @include flexbox();
       @include justify-content(space-between);
@@ -388,8 +372,6 @@
   }
 
   &__inner-bottom {
-
-
     .about__text {
       line-height: 1.5;
       letter-spacing: -0.85px;
@@ -421,10 +403,7 @@
     color: #f35a54;
     font-weight: $fw-b;
   }
-
 }
-
-
 
 .slogan {
   overflow: hidden;
@@ -480,7 +459,6 @@
   @include flexbox();
   @include justify-content(space-between);
 
-
   @include res--laptop {
     max-width: 1080px;
     padding: 0;
@@ -493,7 +471,6 @@
   @include flex-shrink(0);
 
   @include res--laptop {
-
     background-size: 95%;
   }
 
@@ -551,7 +528,6 @@
     }
   }
 }
-
 
 .blind {
   // 👆 SEO용 텍스트 숨기기
