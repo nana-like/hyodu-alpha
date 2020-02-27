@@ -1,25 +1,3 @@
-var fadeInItem = document.querySelector(".slogan-container");
-var scrollEvt = function () {
-
-  var winH = window.innerHeight;
-  var scrollY = window.scrollY;
-  var posFromTop = fadeInItem.getBoundingClientRect().top;
-  var absolutePos = scrollY + posFromTop;
-
-  console.log("winH: ", winH);
-  console.log("scrollY: ", scrollY);
-  console.log("posFromTop: ", posFromTop);
-  console.log("absolutePos: ", absolutePos);
-}
-
-
-window.addEventListener("scroll", scrollEvt);
-
-
-
-
-
-
 var animation = function () {
   var items, winH;
 
@@ -50,3 +28,16 @@ var animation = function () {
 }
 
 animation().init();
+
+
+
+
+
+var heroSection = document.querySelector(".hero");
+var girlEyes = document.querySelector(".deco-girl-eyes-container");
+var eyeMotion = function (e) {
+  var posX = ((e.clientX / window.innerWidth * 2) - 1) * 2.1;
+  var posY = ((e.clientY / window.innerWidth * 2) - 1) * 2.5;
+  girlEyes.style.transform = `translate(${posX}px, ${posY}px)`;
+}
+heroSection.addEventListener("mousemove", eyeMotion);

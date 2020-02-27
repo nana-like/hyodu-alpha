@@ -61,35 +61,64 @@
     }
   }
 
-  .deco-mom-eyes {
+  .illust--logo {
+    position: absolute;
+    display: block;
+    left: 0;
+
+    @include res--laptop {
+      top: 324px;
+      width: 313px;
+      height: 251px;
+    }
+
+  }
+
+
+  .deco-mom-eyes-container {
     position: absolute;
     top: 81px;
     left: 48px;
+
+    @include res--laptop {
+      top: 110px;
+      left: 65px;
+    }
+  }
+
+
+  .deco-mom-eyes {
     width: 19px;
     height: 11px;
     @include bgi("deco-mom-eyes");
     background-size: 100%;
 
     @include res--laptop {
-      top: 110px;
-      left: 65px;
       width: 25px;
       height: 20px;
     }
   }
 
-  .deco-girl-eyes {
+  .deco-girl-eyes-container {
     position: absolute;
     top: 51px;
     left: 142px;
-    width: 14px;
-    height: 11px;
-    @include bgi("deco-girl-eyes");
-    background-size: 100%;
 
     @include res--laptop {
       top: 69px;
       left: 194px;
+      width: 18.5px;
+      height: 15px;
+    }
+  }
+
+  .deco-girl-eyes {
+    @include bgi("deco-girl-eyes");
+    width: 14px;
+    height: 11px;
+    background-size: 100%;
+
+    @include res--laptop {
       width: 18.5px;
       height: 15px;
     }
@@ -550,232 +579,13 @@
   }
 }
 
-
-
-// // 페이드인 아이템 관리
-// .fadeIn {
-//   opacity: 0;
-//   transition: transform 0.5s, opacity 0.8s;
-//   // animation-timing-function: cubic-bezier(0.47, 0, 0.745, 0.715);
-//   transform: translateY(30px);
-//   animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-
-//   &.-ani-up {}
-
-//   &.active {
-//     transform: translateY(0px);
-//     opacity: 1;
-//   }
-// }
-
-// .section--research {
-
-//   .research__item {
-//     transition-delay: 0s;
-//   }
-
-//   .info {
-//     transition-delay: 0s;
-//   }
-// }
-
-// @include res--laptop {
-
-//   .section--research .research__item {
-
-//     //부모세대가 자녀에게~
-//     &:first-child {
-//       transition-delay: 0.2s;
-//     }
-
-//     //밀레니얼 세대가~
-//     &:nth-child(2) {
-//       transition-delay: 0.45s;
-//     }
-//   }
-
-//   .info {
-//     transition-delay: 0.8s;
-//   }
-// }
-
-// .section--about {
-
-//   .research__item {
-
-//     //부모세대가 자녀에게~
-//     &:first-child {
-//       transition-delay: 0.2s;
-//     }
-
-//     //밀레니얼 세대가~
-//     &:nth-child(2) {
-//       transition-delay: 0.45s;
-//     }
-//   }
-
-//   .info {
-//     transition-delay: 0.8s;
-//   }
-
-//   @include res--laptop {}
-// }
-
-.ani {
-  opacity: 0;
-}
-
-.fadeIn {
-  opacity: 0;
-  transition: 0s;
-  transform: translateY(30px);
-  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
-
-
-  &.active {
-    transition: transform 0.5s, opacity 0.8s;
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-
-.section--about .active .title__lg {
-
-  span:after {
-    max-width: 100%;
-  }
-
-  span {
-    &:first-child:after {
-      transition-delay: 0.3s;
-    }
-
-    &:nth-child(3):after {
-      transition-delay: 0.55s;
-    }
-
-    &:nth-child(5):after {
-      transition-delay: 0.75s;
-    }
-
-    &:nth-child(7):after {
-      transition-delay: 0.95s;
-    }
-
-  }
-}
-
-.illust--research {
-  animation: ani 3s infinite;
-}
-
-
-@keyframes ani {
-  0% {
-    transform: rotate(3deg);
-  }
-
-  50% {
-    transform: rotate(-3deg);
-  }
-
-  100% {
-    transform: rotate(3deg);
-  }
-
-}
-
-.illust--about {
-  transform-origin: bottom;
-  animation: ani2 8s infinite;
-}
-
-
-@keyframes ani2 {
-  0% {
-    transform: rotate(2deg) scale(1);
-  }
-
-  30% {
-    transform: rotate(-2deg) scale(1.03);
-  }
-
-  90% {
-    transform: rotate(2deg) scale(1);
-  }
-
-  100% {
-    transform: rotate(2deg) scale(1);
-  }
-
-}
-
-
-.char {
-  animation: ani3 2s infinite;
-}
-
-.char--boy {
-  animation-delay: 0.3s;
-}
-
-.char--mom {
-  animation-delay: 0.5s;
-}
-
-.char--girl {
-  animation-delay: 0.7s;
-}
-
-@keyframes ani3 {
-  10% {
-    transform: translateY(-15px);
-  }
-
-  40% {
-    transform: translateY(0px);
-  }
-}
-
-.deco-mom-eyes {
-  animation: eyeBlink 4s infinite;
-}
-
-.deco-girl-eyes {
-
-  animation: eyeBlink 5s infinite;
-  animation-delay: 1s
-}
-
-@keyframes eyeBlink {
-  4% {
-    transform: scaleY(0.1)
-  }
-
-  6% {
-    transform: scaleY(1)
-  }
-
-  8% {
-    transform: scaleY(0.1)
-  }
-
-  10% {
-    transform: scaleY(1)
-  }
-
-  98% {
-    transform: scaleY(1)
-  }
-
-  100% {
-    transform: scaleY(0.1)
-  }
-}
-
-@keyframes eyeWink {
-  4% {
-    transform: translate(0px, 19px) scaleY(0.1)
-  }
+.cursor {
+  z-index: 999;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 101, 96, 0.4);
+  @include pointer-none;
+  transform: translate(-50%, -50%);
 }
